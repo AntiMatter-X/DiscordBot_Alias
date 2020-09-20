@@ -15,9 +15,11 @@ class CommandCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    async def help(self, ctx, *args):
-        await ctx.send(embed=be.embed(["test", "desc"]))
+    @commands.command(name="help")
+    async def help_(self, ctx, *args):
+        if len(args) > 0:
+            if not args[0] in HELPS: return await ctx.send(be.embed(["エラー", f'"{args[0]}"というコマンドは見つかりませんでした']))
+            await ctx.send(embed=be.embed([f"{args[0]} {HELPS[args[0]][2]}", HELPS[args[0]][1]]))
 
 
 def setup(bot):
