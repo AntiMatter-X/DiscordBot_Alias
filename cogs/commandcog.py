@@ -6,7 +6,7 @@ class CommandCog(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def ping(self, ctx):
+    async def ping(self,ctx):
         await ctx.send("pong")
 
 
