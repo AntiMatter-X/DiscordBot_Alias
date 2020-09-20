@@ -33,7 +33,7 @@ from discord.ext import commands
 
 
 INITIAL_EXTENSIONS = [
-    "resource/cogs.commandcog"
+    "cogs.commandcog"
 ]
 
 
