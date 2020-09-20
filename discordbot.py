@@ -10,13 +10,13 @@ INITIAL_EXTENSIONS = [
 
 
 class MyBot(commands.Bot):
-    def __init__(self, command_prefix):
-        super().__init__(command_prefix)
+    def __init__(self, command_prefix, help_command):
+        super().__init__(command_prefix, help_command=help_command)
         for cog in INITIAL_EXTENSIONS:
             try: self.load_extension(cog)
             except Exception: traceback.print_exc()
 
 
 if __name__ == "__main__":
-    bot = MyBot(command_prefix="$")
+    bot = MyBot(command_prefix="$", help_command=None)
     bot.run(os.environ["DISCORD_BOT_TOKEN"])
