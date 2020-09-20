@@ -42,7 +42,7 @@ class MyBot(commands.Bot):
         super().__init__(command_prefix)
         for cog in INITIAL_EXTENSIONS:
             try: self.load_extension(cog)
-            except Excption: traceback.print_exc()
+            except Exception: traceback.print_exc()
 
 
 if __name__ == "__main__":
