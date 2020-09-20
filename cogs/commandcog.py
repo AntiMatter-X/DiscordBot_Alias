@@ -1,3 +1,5 @@
+import os
+
 from discord.ext import commands
 
 from modules import bot_ext
@@ -20,6 +22,8 @@ class CommandCog(commands.Cog):
         if len(args) > 0:
             if not args[0] in HELPS: return await ctx.send(embed=be.embed(["エラー", f'"{args[0]}"というコマンドは見つかりませんでした'], escape=True))
             await ctx.send(embed=be.embed([f"{args[0]} {HELPS[args[0]][2]}", HELPS[args[0]][1]]))
+
+        else: await ctx.send(embed=be.embed(["コマンドヘルプ", f'**`プレイフィックス: "{os.environ["DISCORD_BOT_PREFIX"]}"`**']))
 
 
 def setup(bot):
