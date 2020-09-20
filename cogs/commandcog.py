@@ -18,7 +18,7 @@ class CommandCog(commands.Cog):
     @commands.command(name="help")
     async def help_(self, ctx, *args):
         if len(args) > 0:
-            if not args[0] in HELPS: return await ctx.send(be.embed(["エラー", f'"{args[0]}"というコマンドは見つかりませんでした']))
+            if not args[0] in HELPS: return await ctx.send(embed=be.embed(["エラー", f'"{args[0]}"というコマンドは見つかりませんでした']))
             await ctx.send(embed=be.embed([f"{args[0]} {HELPS[args[0]][2]}", HELPS[args[0]][1]]))
 
 
