@@ -26,5 +26,5 @@ class CommandCog(commands.Cog):
         else: await ctx.send(embed=be.embed(["コマンドヘルプ", f'**`プレイフィックス: "{os.environ["DISCORD_BOT_PREFIX"]}"`**'], fields=[[k, HELPS[k][0], True] for k in HELPS]))
 
 
-def setup(b.ot):
+def setup(bot):
     bot.add_cog(CommandCog(bot))
