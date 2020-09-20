@@ -47,4 +47,4 @@ class MyBot(commands.Bot):
 
 if __name__ == "__main__":
     bot = MyBot(command_prefix="$")
-    bot.run(os.environ("DISCORD_BOT_TOKEN"))
+    bot.run(os.environ["DISCORD_BOT_TOKEN"])
