@@ -40,7 +40,7 @@ class CommandCog(commands.Cog):
             ["サーバー数", f"{len(self.bot.guilds)} servers", True],
             ["メンバー数", f"{sum([g.member_count for g in self.bot.guilds])} members", True],
             [None, None, True],
-            ["開発者", self.bot.owner_id, True],
+            ["開発者", self.bot.application_info(), True],
             ["開発言語", "Python", True],
             ["作成日時", "{0:%Y-%m-%d %H:%M:%S}".format(self.bot.user.created_at), True]
         ]))
