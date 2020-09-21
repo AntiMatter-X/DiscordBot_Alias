@@ -55,7 +55,7 @@ class CommandCog(commands.Cog):
     # calc -----
     @commands.command()
     async def calc(self, ctx, formula):
-        ctx.send(calc.calculate(formula))
+        await ctx.send(calc.calculate(formula))
     #-----------
 
 
