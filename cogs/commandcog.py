@@ -17,17 +17,21 @@ class CommandCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    # help -----
     @commands.command(name="help")
     async def help_(self, ctx, *args):
         if len(args) > 0:
             if not args[0] in HELPS: return await ctx.send(embed=be.embed(["エラー", f'"{args[0]}"というコマンドは見つかりませんでした'], escape=True))
             await ctx.send(embed=be.embed([f"{args[0]} {HELPS[args[0]][2]}", HELPS[args[0]][1]]))
 
-        else: await ctx.send(embed=be.embed(["コマンドヘルプ", f'**`プレイフィックス: "{os.environ["DISCORD_BOT_PREFIX"]}"`**'], fields=[[k, HELPS[k][0], True] for k in HELPS]))
+        else: await ctx.send(embed=be.embed(["コマンドヘルプ", f'**`プレフィックス: "{os.environ["DISCORD_BOT_PREFIX"]}"`**'], fields=[[k, HELPS[k][0], True] for k in HELPS]))
+    #-----------
 
+    # bot -----
     @commands.command(name="bot")
     async def b_o_t_(self, ctx):
         await ctx.send("abc")
+    #----------
 
 
 def setup(bot):
