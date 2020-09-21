@@ -36,8 +36,8 @@ class CommandCog(commands.Cog):
             "url": os.environ["DISCORD_BOT_INVITE"],
             "icon": "https://f.easyuploader.app/eu-prd/upload/20200921165534_6739487862584363444f.png"
         }], fields=[
-            ["名前", self.bot.user.name, True],
-            ["ID", self.bot.user.id, True],
+            ["名前", app_data.info, True],
+            ["ID", app_data.id, True],
             [None, None, True],
             ["サーバー数", f"{len(self.bot.guilds)} servers", True],
             ["メンバー数", f"{sum([g.member_count for g in self.bot.guilds])} members", True],
