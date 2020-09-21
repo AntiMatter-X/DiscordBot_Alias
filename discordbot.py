@@ -19,5 +19,5 @@ class MyBot(commands.Bot):
 
 
 if __name__ == "__main__":
-    bot = MyBot(command_prefix=os.environ["DISCORD_BOT_PREFIX"], help_command=None, case_insensitive=True)
+    bot = MyBot(command_prefix=os.environ["DISCORD_BOT_PREFIX"], help_command=None, case_insensitive=False)
     bot.run(os.environ["DISCORD_BOT_TOKEN"])
