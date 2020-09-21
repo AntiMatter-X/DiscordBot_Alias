@@ -30,11 +30,19 @@ class CommandCog(commands.Cog):
     # bot -----
     @commands.command(name="test")
     async def b_o_t_(self, ctx):
-        await ctx.send(embed=be.embed(["test", "test"], thumbnail=self.bot.user.avatar_url, author=["botの情報", {
+        await ctx.send(embed=be.embed(["概要", "test"], thumbnail=self.bot.user.avatar_url, author=["botの情報", {
             "url": os.environ["DISCORD_BOT_INVITE"],
             "icon": "https://f.easyuploader.app/eu-prd/upload/20200921165534_6739487862584363444f.png"
         }], fields=[
-            ["test", "test"]
+            ["名前", self.bot.user.name, True],
+            ["ID", self.bot.user.name, True],
+            [None, None, True],
+            ["サーバー数", f"{len(self.bot.guilds)} servers", True],
+            ["メンバー数", f"{sum([g.member_count for g in self.bot.guilds])} members", True],
+            [None, None, True],
+            ["開発者", self.bot.get_user(self.bot.owner_id).name, True],
+            ["開発言語", "Python", True],
+            ["作成日時", "{0:%Y-%m-%d %H:%M:%S}".format(self.bot.user.created_at), True]
         ]))
     """@commands.group(name="bot")
     async def b_o_t_(self, ctx):
