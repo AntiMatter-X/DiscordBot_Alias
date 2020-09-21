@@ -3,7 +3,6 @@ import os
 from discord.ext import commands
 
 from modules import bot_ext
-from modules import calc
 
 
 be = bot_ext.BotExt()
@@ -51,11 +50,6 @@ class CommandCog(commands.Cog):
             ["作成日時", "{0:%Y-%m-%d %H:%M:%S}".format(self.bot.user.created_at), True]
         ]))
     #----------
-
-    # calc -----
-    @commands.command()
-    async def calc(self, ctx, formula): await ctx.send(embed=be.embed([formula, calc.calculate(formula)], escape=True))
-    #-----------
 
 
 def setup(bot):
