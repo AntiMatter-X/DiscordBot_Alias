@@ -36,6 +36,15 @@ class BotExt:
             url=options["url"] if "url" in options else None,
             color=options["color"] if "color" in options else self.color
         )
+        if "author" in options:
+            if type(options["author"]) is not list: return "ERROR"
+            if len(options["author"]) == 0: return "ERROR"
+            if len(options["author"]) < 2: options["author"].append({})
+            embed.set_author(
+                name=_escape_md(options["escape"] if "escape" in options else False, options["author"][0] if options["author"][0] else "\0")
+                url=options["author"][1]["url"] if "url" in options["author"][1] else None,
+                icon=options["author"][1]["icon"] if "icon" in options["author"][1] else None,
+            )
         if "fields" in options:
             if type(options["fields"]) is not list: return "ERROR"
             for f in options["fields"]:
@@ -46,5 +55,6 @@ class BotExt:
                     value=_escape_md(options["escape"] if "escape" in options else False, f[1]) if f[1] else "\0",
                     inline=f[2]
                 )
+        if "thumbnail" in options: embed.set_thumbnail(url=options["thumbnail"])
         if "image" in options: embed.set_image(url=options["image"])
         return embed
