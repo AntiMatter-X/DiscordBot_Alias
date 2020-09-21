@@ -32,7 +32,7 @@ class CommandCog(commands.Cog):
     async def b_o_t_(self, ctx):
         await ctx.send(embed=be.embed(["test", "test"], thumbnail=self.bot.user.avatar_url, author=["botの情報", {
             "url": os.environ["DISCORD_BOT_INVITE"],
-            "icon": "https://f.easyuploader.app/eu-prd/upload/20200921165534_6143575078525458614b.png"
+            "icon": "https://f.easyuploader.app/eu-prd/upload/20200921165534_6739487862584363444f.png"
         }], fields=[
             ["test", "test"]
         ]))
