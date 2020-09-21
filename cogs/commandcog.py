@@ -27,7 +27,11 @@ class CommandCog(commands.Cog):
 
     @commands.group(name="bot")
     async def bot_(self, ctx):
-        if ctx.invoked_subcommand is None: await ctx.send("")
+        if ctx.invoked_subcommand is None: await ctx.send("vv")
+
+    @bot_.command()
+    async def test(self, ctx):
+        await ctx.send("aaa")
 
 
 def setup(bot):
