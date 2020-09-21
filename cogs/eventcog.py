@@ -30,7 +30,7 @@ class EventCog(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self, member): await refresh_act(self.bot)
 
-    @commands.Cog.listener
+    @commands.Cog.listener()
     async def on_member_remove(self, member): await refresh_act(self.bot)
 
 
