@@ -30,10 +30,10 @@ class CommandCog(commands.Cog):
     # bot -----
     @commands.command(name="test")
     async def b_o_t_(self, ctx):
-        await ctx.send(["test", "test"], thumbnail=["a", {
+        await ctx.send(embed=be.embed(["test", "test"], thumbnail=["a", {
             "url": os.environ["DISCORD_BOT_INVITE"],
             "icon": self.bot.user.avatar_url
-        }])
+        }]))
     """@commands.group(name="bot")
     async def b_o_t_(self, ctx):
         if ctx.invoked_subcommand is None: await ctx.send(embed=be.embed(["botの情報", None], fields=[
