@@ -29,7 +29,11 @@ class SecretCommandCog(commands.Cog):
              ]): await ctx.message.add_reaction(e)
         else: await ctx.send(random.choice([
             "ぴえん",
-            "ぱおん"
+            "ぱおん",
+            "https://www.youtube.com/watch?v=U1hdYYosOYc",
+            "https://www.youtube.com/watch?v=MDWYEdNox1g",
+            "https://www.youtube.com/watch?v=iJ-H3gx2P9Y",
+            "https://www.youtube.com/watch?v=jat2xxVaz_U"
         ]))
     #-----------
 
