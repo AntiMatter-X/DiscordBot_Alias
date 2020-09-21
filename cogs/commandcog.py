@@ -30,7 +30,15 @@ class CommandCog(commands.Cog):
     # bot -----
     @commands.group(name="bot")
     async def b_o_t_(self, ctx):
-        if ctx.invoked_subcommand is None: await ctx.send("abc")
+        if ctx.invoked_subcommand is None: await ctx.send(embed=be.embed(["botの情報", None], fields=[
+            ["名前", self.bot.user.name, True],
+            ["ID", self.bot.user.id, True],
+            [None, None, True],
+            ["サーバー数", f"{len(self.bot.guilds)} servers", True],
+            ["メンバー数", f"{sum([g.member_count for g in self.bot.guilds])} members", True],
+            [None, None, True],
+            ["作成日時", "{0:%Y-%m-%d %H:%M:%S}".format(self.bot.user.created_at), True]
+        ]))
 
     @b_o_t_.command()
     async def invite(self, ctx):
