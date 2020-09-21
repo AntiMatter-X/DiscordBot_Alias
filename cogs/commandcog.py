@@ -1,6 +1,4 @@
 import os
-import discord
-import datetime
 
 from discord.ext import commands
 
@@ -27,14 +25,9 @@ class CommandCog(commands.Cog):
 
         else: await ctx.send(embed=be.embed(["コマンドヘルプ", f'**`プレイフィックス: "{os.environ["DISCORD_BOT_PREFIX"]}"`**'], fields=[[k, HELPS[k][0], True] for k in HELPS]))
 
-    @commands.Cog.listener()
-    async def on_ready(self):
-        await self.bot.change_presence(activity=discord.Game(name=" | ".join([
-            f"{os.environ['DISCORD_BOT_PREFIX']}help",
-            f"{len(self.bot.guilds)} servers",
-            f"{sum([g.member_count for g in self.bot.guilds])} members",
-            f"refresh date: {'{0:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=+9), 'JST')))}"
-        ])))
+    @commands.group(name="bot")
+    async def bot_(self, ctx):
+        ctx.send("")
 
 
 def setup(bot):
