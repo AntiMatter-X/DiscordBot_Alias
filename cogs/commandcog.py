@@ -9,7 +9,8 @@ be = bot_ext.BotExt()
 
 
 HELPS = {
-    "help": ["ヘルプを表示", "コマンドヘルプを表示します。\ncommand引数にコマンド名を指定すると指定したコマンドの詳細が表示されます。", "[command: string]"]
+    "help": ["ヘルプを表示", "コマンドヘルプを表示します。\ncommand引数にコマンド名を指定すると指定したコマンドの詳細が表示されます。", "[command: string]"],
+    "bot": ["botの情報を表示", "botの招待用リンクや公式サーバーなどの情報を表示します。"]
 }
 
 
@@ -31,7 +32,6 @@ class CommandCog(commands.Cog):
     @commands.command(name="bot")
     async def b_o_t_(self, ctx):
         app_info = await self.bot.application_info()
-        print(app_info)
         await ctx.send(embed=be.embed([
             "概要",
             f"[bot公式サーバー]({os.environ['DISCORD_BOT_SERVER_INVITE']})\n[botを招待]({os.environ['DISCORD_BOT_INVITE']})" if app_info.description == "" else f"{app_info.description}\n\n[bot公式サーバー]({os.environ['DISCORD_BOT_SERVER_INVITE']})\n[botを招待]({os.environ['DISCORD_BOT_INVITE']})"
