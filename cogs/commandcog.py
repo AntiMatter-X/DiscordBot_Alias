@@ -30,7 +30,7 @@ class CommandCog(commands.Cog):
     # bot -----
     @commands.group(name="bot")
     async def b_o_t_(self, ctx):
-        await ctx.send("abc")
+        if ctx.invoked_subcommand is None: await ctx.send("abc")
 
     @b_o_t_.command()
     async def invite(self, ctx):
