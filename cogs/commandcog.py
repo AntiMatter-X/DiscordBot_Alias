@@ -28,7 +28,7 @@ class CommandCog(commands.Cog):
     #-----------
 
     # bot -----
-    @commands.command(name="test")
+    @commands.command(name="bot")
     async def b_o_t_(self, ctx):
         app_info = await self.bot.application_info()
         print(app_info)
