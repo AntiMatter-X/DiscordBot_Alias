@@ -34,7 +34,7 @@ class CommandCog(commands.Cog):
         print(app_info)
         await ctx.send(embed=be.embed([
             "概要",
-            f"[botを招待]({os.environ['DISCORD_BOT_INVITE']})" if app_info.description == "" else f"{app_info.description}\n\n[botを招待]({os.environ['DISCORD_BOT_INVITE']})"
+            f"[bot公式サーバー]({os.environ['DISCORD_BOT_SERVER_INVITE']})\n[botを招待]({os.environ['DISCORD_BOT_INVITE']})" if app_info.description == "" else f"{app_info.description}\n\n[bot公式サーバー]({os.environ['DISCORD_BOT_SERVER_INVITE']})\n[botを招待]({os.environ['DISCORD_BOT_INVITE']})"
         ], thumbnail=self.bot.user.avatar_url, author=["botの情報", {
             "url": os.environ["DISCORD_BOT_INVITE"],
             "icon": "https://f.easyuploader.app/eu-prd/upload/20200921165534_6739487862584363444f.png"
