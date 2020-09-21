@@ -5,7 +5,8 @@ from discord.ext import commands
 
 
 INITIAL_EXTENSIONS = [
-    "cogs.commandcog"
+    "cogs.commandcog",
+    "cogs.eventcog"
 ]
 
 
