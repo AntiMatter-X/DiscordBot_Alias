@@ -32,7 +32,10 @@ class CommandCog(commands.Cog):
     async def b_o_t_(self, ctx):
         app_info = await self.bot.application_info()
         print(app_info)
-        await ctx.send(embed=be.embed(["概要", app_info.description], thumbnail=self.bot.user.avatar_url, author=["botの情報", {
+        await ctx.send(embed=be.embed([
+            "概要",
+            f"[botを招待]({os.environ['DISCORD_BOT_INVITE']})" if app_info.description == "" else f"{app_info.description}\n\n[botを招待]({os.environ['DISCORD_BOT_INVITE']})"
+        ], thumbnail=self.bot.user.avatar_url, author=["botの情報", {
             "url": os.environ["DISCORD_BOT_INVITE"],
             "icon": "https://f.easyuploader.app/eu-prd/upload/20200921165534_6739487862584363444f.png"
         }], fields=[
