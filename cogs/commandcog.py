@@ -32,7 +32,7 @@ class CommandCog(commands.Cog):
     async def b_o_t_(self, ctx):
         await ctx.send(["test", "test"], thumbnail=["a", {
             "url": os.environ["DISCORD_BOT_INVITE"],
-            "icon": self.bot.avatar_url
+            "icon": self.bot.user.avatar_url
         }])
     """@commands.group(name="bot")
     async def b_o_t_(self, ctx):
