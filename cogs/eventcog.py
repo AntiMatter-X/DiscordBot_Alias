@@ -7,7 +7,7 @@ from discord.ext import commands
 
 async def refresh_act(bot):
     await bot.change_presence(activity=discord.Game(name=" | ".join([
-        f"{os.environ['DISCORD_BOT_PREFIX']}help [command: string]",
+        f"{os.environ['DISCORD_BOT_PREFIX']}help",
         f"{len(bot.guilds)} servers",
         f"{sum([g.member_count for g in bot.guilds])} members",
         f"refresh date: {'{0:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=+9), 'JST')))}"
