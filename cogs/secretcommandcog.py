@@ -15,10 +15,17 @@ class SecretCommandCog(commands.Cog):
     # pien -----
     @commands.command()
     async def pien(self, ctx):
+        emoji = [
+            "\U0001F97A",
+            "\U0001F418"
+        ]
         type = random.randint(0, 2)
-        if type == 0: await ctx.message.add_reaction("\U0001F97A")
-        elif type == 1: await ctx.send("\U0001F97A")
-        else: await ctx.send("ぱおん")
+        if type == 0: await ctx.message.add_reaction(random.choice(emoji))
+        elif type == 1: await ctx.send(random.choice(emoji))
+        else: await ctx.send(random.choice([
+            "ぴえん",
+            "ぱおん"
+        ]))
     #-----------
 
 
