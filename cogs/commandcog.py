@@ -35,7 +35,7 @@ class CommandCog(commands.Cog):
     @b_o_t_.command()
     async def invite(self, ctx):
         await ctx.send(embed=be.embed(["botを招待", None], {
-            "url": os.environ("DISCORD_BOT_INVITE")
+            "url": os.environ["DISCORD_BOT_INVITE"]
         }))
     #----------
 
