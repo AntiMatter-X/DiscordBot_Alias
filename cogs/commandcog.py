@@ -28,7 +28,13 @@ class CommandCog(commands.Cog):
     #-----------
 
     # bot -----
-    @commands.group(name="bot")
+    @commands.command(name="test")
+    async def b_o_t_(self, ctx):
+        await ctx.send(["test", "test"], thumbnail=["a", {
+            "url": os.environ["DISCORD_BOT_INVITE"],
+            "icon": self.bot.avatar_url
+        }])
+    """@commands.group(name="bot")
     async def b_o_t_(self, ctx):
         if ctx.invoked_subcommand is None: await ctx.send(embed=be.embed(["botの情報", None], fields=[
             ["名前", self.bot.user.name, True],
@@ -42,7 +48,7 @@ class CommandCog(commands.Cog):
 
     @b_o_t_.command()
     async def invite(self, ctx):
-        await ctx.send(embed=be.embed(["招待", f"[botを招待する]({os.environ['DISCORD_BOT_INVITE']})"]))
+        await ctx.send(embed=be.embed(["招待", f"[botを招待する]({os.environ['DISCORD_BOT_INVITE']})"]))"""
     #----------
 
 
