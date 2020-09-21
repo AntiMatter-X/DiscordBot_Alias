@@ -43,7 +43,7 @@ class BotExt:
             embed.set_author(
                 name=_escape_md(options["escape"] if "escape" in options else False, options["author"][0] if options["author"][0] else "\0"),
                 url=options["author"][1]["url"] if "url" in options["author"][1] else None,
-                icon=options["author"][1]["icon"] if "icon" in options["author"][1] else None
+                icon_url=options["author"][1]["icon"] if "icon" in options["author"][1] else None
             )
         if "fields" in options:
             if type(options["fields"]) is not list: return "ERROR"
