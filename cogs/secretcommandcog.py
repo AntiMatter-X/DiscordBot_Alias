@@ -13,7 +13,7 @@ class SecretCommandCog(commands.Cog):
         self.bot = bot
 
     # pien -----
-    @commands.command()
+    @commands.command(aliases=["paon"])
     async def pien(self, ctx):
         emoji = [
             "\U0001F97A",
