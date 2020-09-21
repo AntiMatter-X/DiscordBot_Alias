@@ -19,19 +19,19 @@ class EventCog(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
-    async def on_ready(self): refresh_act(self.bot)
+    async def on_ready(self): await refresh_act(self.bot)
 
     @commands.Cog.listener()
-    async def on_guild_join(self, guild): refresh_act(self.bot)
+    async def on_guild_join(self, guild): await refresh_act(self.bot)
 
     @commands.Cog.listener()
-    async def on_guild_remove(self, guild): refresh_act(self.bot)
+    async def on_guild_remove(self, guild): await refresh_act(self.bot)
 
     @commands.Cog.listener()
-    async def on_member_join(self, member): refresh_act(self.bot)
+    async def on_member_join(self, member): await refresh_act(self.bot)
 
     @commands.Cog.listener
-    async def on_member_remove(self, member): refresh_act(self.bot)
+    async def on_member_remove(self, member): await refresh_act(self.bot)
 
 
 def setup(bot):
