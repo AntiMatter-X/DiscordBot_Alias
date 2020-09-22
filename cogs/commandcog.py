@@ -53,7 +53,7 @@ class CommandCog(commands.Cog):
 
     @b_o_t_.command()
     async def ping(self, ctx):
-        await ctx.send(round(client.latency * 1000))
+        await ctx.send(round(self.bot.latency * 1000))
     #----------
 
 
