@@ -2,7 +2,7 @@ import os
 import discord
 import datetime
 
-from discord.ext import commands
+from discord.ext import commands, CommandNotFound
 
 from modules import bot_ext
 
