@@ -42,7 +42,11 @@ class SecretCommandCog(commands.Cog):
     # cat -----
     @commands.command()
     async def cat(self, ctx):
-        await ctx.send(random.choice([
+        type = random.randint(0, 1)
+        if type == 0: await ctx.send("\U0001F431")
+        else: await ctx.send(random.choice([
+            "にゃーん",
+            "\U0001F431",
             "https://f.easyuploader.app/eu-prd/upload/20200922112534_505462776f304c4b7741.gif",
             "https://www.youtube.com/watch?v=wPizs7AqRkE"
         ]))
