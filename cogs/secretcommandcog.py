@@ -42,7 +42,7 @@ class SecretCommandCog(commands.Cog):
     # cat -----
     @commands.command()
     async def cat(self, ctx):
-        await ctx.send("https://www.youtube.com/watch?v=TTn4WzxRoyw")
+        await ctx.send("https://www.youtube.com/watch?v=wPizs7AqRkE")
     #----------
 
 
