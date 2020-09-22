@@ -42,7 +42,10 @@ class SecretCommandCog(commands.Cog):
     # cat -----
     @commands.command()
     async def cat(self, ctx):
-        await ctx.send("https://www.youtube.com/watch?v=wPizs7AqRkE")
+        await ctx.send(random.choice([
+            "https://f.easyuploader.app/eu-prd/upload/20200922112534_505462776f304c4b7741.gif",
+            "https://www.youtube.com/watch?v=wPizs7AqRkE"
+        ]))
     #----------
 
 
