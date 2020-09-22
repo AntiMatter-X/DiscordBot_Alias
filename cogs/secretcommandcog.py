@@ -33,9 +33,17 @@ class SecretCommandCog(commands.Cog):
             "https://www.youtube.com/watch?v=U1hdYYosOYc",
             "https://www.youtube.com/watch?v=MDWYEdNox1g",
             "https://www.youtube.com/watch?v=iJ-H3gx2P9Y",
-            "https://www.youtube.com/watch?v=jat2xxVaz_U"
+            "https://www.youtube.com/watch?v=jat2xxVaz_U",
+            "https://www.youtube.com/watch?v=7l4xJbSA5Jg",
+            "https://www.youtube.com/watch?v=TTn4WzxRoyw"
         ]))
     #-----------
+
+    # cat -----
+    @commands.command()
+    async def cat(self, ctx):
+        await ctx.send("https://www.youtube.com/watch?v=TTn4WzxRoyw")
+    #----------
 
 
 def setup(bot):
