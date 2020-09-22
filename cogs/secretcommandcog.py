@@ -52,6 +52,13 @@ class SecretCommandCog(commands.Cog):
         ]))
     #----------
 
+    # test -----
+    @commands.command()
+    async def test(self, ctx):
+        with open("test.txt", mode="w", encoding="utf-8") as f:
+            f.write("Hello, World!")
+    #-----------
+
 
 def setup(bot):
     bot.add_cog(SecretCommandCog(bot))
