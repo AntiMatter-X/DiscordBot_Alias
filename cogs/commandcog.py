@@ -29,8 +29,9 @@ class CommandCog(commands.Cog):
     #-----------
 
     # bot -----
-    @commands.command(name="bot")
+    @commands.group(name="bot")
     async def b_o_t_(self, ctx):
+        if ctx.invoked_subcommand is not None: return
         app_info = await self.bot.application_info()
         await ctx.send(embed=be.embed([
             "概要",
@@ -49,6 +50,10 @@ class CommandCog(commands.Cog):
             ["開発言語", "Python", True],
             ["作成日時", "{0:%Y-%m-%d %H:%M:%S}".format(self.bot.user.created_at), True]
         ]))
+
+    @b_o_t_.command()
+    async def ping(self, ctx):
+        await ctx.send(self.bot.latency)
     #----------
 
 
