@@ -26,7 +26,7 @@ class EventCog(commands.Cog):
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
-        if isinstance(error, CommandNotFound): await ctx.send(embed=be.embed(["エラー", f'"{ctx.invoked_with}"というコマンドは見つかりませんでした'], escape=True))
+        if isinstance(error, CommandNotFound): return await ctx.send(embed=be.embed(["エラー", f'"{ctx.invoked_with}"というコマンドは見つかりませんでした'], escape=True))
         raise error
 
     @commands.Cog.listener()
