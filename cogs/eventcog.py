@@ -23,7 +23,7 @@ class EventCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @self.bot.event
+    @bot.event
     async def on_command_error(self, ctx, error):
         if isinstance(error, CommandNotFound): await ctx.send(embed=be.embed(["エラー", f'ああ'], escape=True))
         raise error
