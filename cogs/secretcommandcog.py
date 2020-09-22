@@ -43,7 +43,7 @@ class SecretCommandCog(commands.Cog):
     @commands.command()
     async def cat(self, ctx):
         type = random.randint(0, 1)
-        if type == 0: await ctx.send("\U0001F431")
+        if type == 0: await ctx.message.add_reaction("\U0001F431")
         else: await ctx.send(random.choice([
             "にゃーん",
             "\U0001F431",
