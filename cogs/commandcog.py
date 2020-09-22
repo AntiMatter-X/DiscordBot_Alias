@@ -19,13 +19,18 @@ class CommandCog(commands.Cog):
         self.bot = bot
 
     # help -----
-    @commands.command(name="help")
+    @commands.group(name="help")
     async def help_(self, ctx, *args):
+        if ctx.invoked_subcommand is not None: return
         if len(args) > 0:
             if not args[0] in HELPS: return await ctx.send(embed=be.embed(["エラー", f'"{args[0]}"というコマンドは見つかりませんでした'], escape=True))
             await ctx.send(embed=be.embed([(args[0] + (f" {HELPS[args[0]][2]}" if len(HELPS[args[0]]) > 2 else '')), HELPS[args[0]][1]]))
 
         else: await ctx.send(embed=be.embed(["コマンドヘルプ", f'**`プレフィックス: "{os.environ["DISCORD_BOT_PREFIX"]}"`**\n**`help {HELPS["help"][2]}`**で詳細なコマンドヘルプ'], fields=[[k, HELPS[k][0], True] for k in HELPS]))
+
+    @help_.command(name="all")
+    async def all_(self, ctx):
+        await ctx.send("a")
     #-----------
 
     # bot -----
