@@ -4,6 +4,11 @@ import datetime
 
 from discord.ext import commands
 
+from modules import bot_ext
+
+
+be = bot_ext.BotExt()
+
 
 async def refresh_act(bot):
     await bot.change_presence(activity=discord.Game(name=" | ".join([
@@ -17,6 +22,11 @@ async def refresh_act(bot):
 class EventCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
+    @self.bot.event
+    async def on_command_error(self, ctx, error):
+        if isinstance(error, CommandNotFound): await ctx.send(embed=be.embed(["エラー", f'ああ'], escape=True))
+        raise error
 
     @commands.Cog.listener()
     async def on_ready(self): await refresh_act(self.bot)
